@@ -33,8 +33,8 @@ export default function Weather() {
       </div>
 
       <ul>
-        <li>Sunny</li>
-        <li>Humidity 50%</li>
+        <li>Partly cloudy</li>
+        <li>Humidity: 50%</li>
         <li>Wind: 5m/h</li>
       </ul>
     </div>
