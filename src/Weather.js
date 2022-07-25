@@ -5,9 +5,18 @@ import "./Weather.css";
 
 export default function Weather() {
   const [ready, setReady] = useState(false);
-  const [temperature, setTemperature] = useState(null);
+  const [weatherData, setWeatherData] = useState(null);
   function handleResponse(response) {
-    setTemperature(response.data.main.temp);
+    setWeatherData({
+      temperature: response.data.main.temp,
+      city: response.data.name,
+      data: "Thursday 10:00am",
+      iconUrl: "https://openweathermap.org/img/wn/02d@2x.png",
+      description: response.data.weather[0].description,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+    });
+
     setReady(true);
   }
 
@@ -33,18 +42,20 @@ export default function Weather() {
             </div>
           </div>
         </form>
-        <h1>New York Weather Conditions</h1>
-        <h2>Thursday 10:00 am</h2>
+        <h1>{weatherData.city} Weather Conditions</h1>
+        <h2>{weatherData.date}</h2>
         <div className="currentTemp">
-          <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="Clear" />
-          <span className="temperature">{temperature}</span>
+          <img src={weatherData.iconUrl} alt={weatherData.description} />
+          <span className="temperature">
+            {Math.round(weatherData.temperature)}
+          </span>
           <span className="unit">°F</span>
         </div>
 
         <ul>
-          <li>Partly cloudy</li>
-          <li>Humidity: 50%</li>
-          <li>Wind: 5m/h</li>
+          <li className="text-capitalize">{weatherData.description}</li>
+          <li>Humidity: {weatherData.humidity}%</li>
+          <li>Wind: {Math.round(weatherData.wind)}m/h</li>
         </ul>
       </div>
     );
