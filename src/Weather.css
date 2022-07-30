@@ -45,10 +45,14 @@
   font-size: 100px;
 }
 
-.Weather .unit {
+.WeatherTemperature .unit {
   position: relative;
-  top: -25px;
+  top: -50px;
   font-size: 20px;
+}
+
+.WeatherTemperature a {
+  color: #df493b;
 }
 
 .Weather li {
