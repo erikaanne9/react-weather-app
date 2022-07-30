@@ -59,3 +59,7 @@
   list-style: none;
   opacity: 0.7;
 }
+
+.WeatherInfo {
+  font-family: "Quicksand", sans-serif;
+}
