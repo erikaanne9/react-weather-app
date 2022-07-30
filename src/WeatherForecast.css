@@ -1,0 +1,11 @@
+.WeatherForecast {
+  text-align: center;
+}
+
+.ForecastDay {
+  opacity: 0.7;
+}
+
+.ForecastMin {
+  opacity: 0.7;
+}
